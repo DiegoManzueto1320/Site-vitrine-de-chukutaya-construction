@@ -1,0 +1,369 @@
+/* style.css - simple, modern and responsive */
+
+/* Palette professionnelle */
+:root {
+  --primary: #0b3d91;
+  --secondary: #ff8c00;
+  --accent: #28a745;
+  --bg-light: #f9fbff;
+  --bg-dark: #222;
+  --text-main: #222;
+  --text-light: #fff;
+  --border: #e0e6f1;
+}
+
+*{box-sizing:border-box}
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, var(--primary) 70%, #1456c2 100%);
+  color: var(--text-light);
+  padding: 22px 0;
+  box-shadow: 0 2px 12px rgba(11,61,145,0.08);
+}
+
+.branding h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.main-nav a {
+  color: var(--text-light);
+  margin-right: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.lang-switch {
+  float: right;
+  font-size: 1.05rem;
+}
+
+/* Hero */
+.hero {
+  background: url('assets/images/logo.jpg') no-repeat center center;
+  background-size: contain; /* ajuste selon ton besoin : cover | contain | auto */
+  background-color: #f8f9fa; /* couleur de fond de secours */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* effet assombri pour mieux lire le texte */
+  z-index: 1;
+}
+
+.hero h1, .hero p, .hero a {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--secondary);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255,140,0,0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero .btn:hover {
+  background: #e67600;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Cartes et grilles */
+.grid, .gallery-grid {
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(11,61,145,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover, .card:focus-within {
+  box-shadow: 0 12px 36px rgba(11,61,145,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Team */
+.team-grid {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 28px;
+}
+
+/* Formulaires */
+.form-section {
+  background: var(--bg-light);
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(11,61,145,0.09);
+  padding: 38px 28px;
+  margin: 0 auto 48px auto;
+  max-width: 640px;
+}
+
+.form-section h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 22px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.form-section hr {
+  margin: 32px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  font-size: 1.07rem;
+  margin-bottom: 12px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(11,61,145,0.03);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b0b8c9;
+  opacity: 1;
+  font-style: italic;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 2px 12px rgba(40,167,69,0.13);
+}
+
+.btn-primary, .quote-form button, .service-contact-form button {
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 0;
+  font-size: 1.13rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(11,61,145,0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover, .quote-form button:hover, .service-contact-form button:hover {
+  background: #072e6a;
+  transform: translateY(-2px);
+}
+
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .form-section {
+    padding: 18px 6px;
+  }
+  .form-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ajout d'effets de transition globaux */
+* {
+  box-sizing: border-box;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* Amélioration de l'accessibilité des liens */
+a:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Ajout d'un effet de survol sur les cartes */
+.card:hover, .card:focus-within {
+  box-shadow: 0 12px 36px rgba(11,61,145,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Ajout d'un effet sur les boutons */
+.btn-primary, .quote-form button, .service-contact-form button {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after, .quote-form button::after, .service-contact-form button::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+  z-index: 0;
+}
+.btn-primary:active::after, .quote-form button:active::after, .service-contact-form button:active::after {
+  width: 200%; height: 200%;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+/* Tablettes (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 16px;
+  }
+  .branding h1 {
+    font-size: 1.8rem;
+  }
+  .branding p {
+    font-size: 0.95em;
+  }
+  .main-nav a {
+    margin-right: 12px;
+    font-size: 0.95em;
+  }
+}
+
+/* Téléphones larges (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    max-width: 100%;
+  }
+  .branding {
+    text-align: center;
+  }
+  .branding img {
+    max-width: 80px !important;
+    height: auto !important;
+  }
+  .branding h1 {
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+  .branding p {
+    font-size: 0.9em;
+  }
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .main-nav a {
+    margin-right: 0;
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Téléphones moyens (max-width: 480px) */
+@media (max-width: 480px) {
+  .site-header {
+    padding: 12px 0;
+  }
+  .container {
+    padding: 10px;
+  }
+  .branding img {
+    max-width: 70px !important;
+    height: auto !important;
+  }
+  .branding h1 {
+    font-size: 1.2rem;
+    margin-top: 6px;
+    letter-spacing: 0;
+  }
+  .branding p {
+    font-size: 0.8em;
+    margin: 4px 0 0 0;
+  }
+  .main-nav {
+    gap: 4px;
+  }
+  .main-nav a {
+    padding: 5px 8px;
+    font-size: 0.75em;
+  }
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Ultra-petits écrans (max-width: 320px) */
+@media (max-width: 320px) {
+  .branding h1 {
+    font-size: 1rem;
+  }
+  .main-nav a {
+    font-size: 0.7em;
+    padding: 4px 6px;
+  }
+}
