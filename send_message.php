@@ -60,11 +60,6 @@ if (!class_exists('RateLimiter')) {
 
 
 
-// Clé secrète reCAPTCHA
-
-$recaptcha_secret = '6LeifvgrAAAAABgfZ12Bg714Codw410GaOxKS3QS';
-
-
 
 // Traitement du formulaire
 
@@ -178,22 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    // --- Vérification reCAPTCHA ---
-
-    if (empty($recaptcha_response)) {
-
-        if ($rateLimiter) $rateLimiter->recordAttempt('contact', false);
-
-        echo "<script>
-
-            alert('⚠️ Erreur reCAPTCHA : Veuillez cocher la case \"Je ne suis pas un robot\".');
-
-            window.location.href = 'contact.php';
-
-        </script>";
-
-        exit;
-
+   
     }
 
 
